@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <p class="steps-title">Follow these simple steps to get started:</p>
+    <div class="section">
+        <label>Step 1:</label>
+        <p>
+            Head over to <a href="https://developer.softrig.com" target="_blank"
+                            rel="noreferrer">https://developer.softrig.com</a> and create an application with a Web client
+        </p>
+        <p class="guide">
+            <span class="bold">Redirect Url 1: </span><span class="guide-value">
+                https://localhost:7241/signin-oidc
+            </span>
+        </p>
+        <p class="guide">
+            <span class="bold">Redirect Url 2: </span><span class="guide-value">
+                https://localhost:7241/signout-callback-oidc
+            </span>
+        </p>
+        <p class="guide">
+            <span class="bold">Logout Url : </span><span class="guide-value">https://localhost:7241/signout-callback-oidc</span>
+        </p>
+    </div>
+    <div class="section">
+        <label>Step 2:</label>
+        <p>Edit your OIDC configuration in AppSettings.json file</p>
+        <div class="code-block">
+            <code>
+                "AuthSettings": {<br />&nbsp;&nbsp;
+                "ClientId": <span class="value">"&lt;VALUE&gt;"</span>, <br /> &nbsp;&nbsp;
+                "ClientSecret": <span class="value">"&lt;VALUE&gt;"</span>, <br />&nbsp;&nbsp;
+                "Authority": <span>"https://test-login.softrig.com"</span>, <span class="comment">//Do not change</span> <br />
+                }
+            </code>
+        </div>
+    </div>
+    <div class="section">
+        <label>Step 3:</label>
+        <p>Click the log in button below after completing the steps above :)</p>
+        <form method="post" asp-controller="Account" asp-action="Login">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
